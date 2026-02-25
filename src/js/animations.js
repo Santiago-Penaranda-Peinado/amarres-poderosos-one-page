@@ -1,21 +1,21 @@
-// Ubicación: /app/src/js/animations.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll observer for fade-in elements
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 200); // Staggered delay for drama
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.fade-in, .slide-up');
+    const fadeElements = document.querySelectorAll('.fade-in, .slide-up, .section');
     fadeElements.forEach(el => observer.observe(el));
 });

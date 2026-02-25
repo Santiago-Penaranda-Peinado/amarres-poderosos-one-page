@@ -1,29 +1,168 @@
 // Ubicación: /app/src/scss/sections/_problemas.scss
-.problem-list {
-    max-width: 600px;
-    margin: 0 auto 3rem;
+.problems {
+    background-color: #17122b;
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 0; // Ensures enough spacing around the staggered grid
 
-    li {
+    // Smooth transition gradients for top (Hero) and bottom (Mi Ayuda)
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom,
+                $color-bg-dark 0%,
+                transparent 10%,
+                transparent 90%,
+                $color-bg-dark 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    &__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
         position: relative;
-        padding-left: 2rem;
-        margin-bottom: 1.5rem;
-        font-size: 1.1rem;
-        transition: transform $transition-fast;
+        z-index: 2;
 
-        &:hover {
-            transform: translateX(10px);
-            color: $color-primary;
+        h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        &::before {
-            content: '\f06a';
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: $color-secondary;
-            filter: drop-shadow(0 0 5px rgba($color-secondary, 0.5));
+        .problems__desc {
+            font-size: 1.15rem;
+            color: $color-text-muted;
+            line-height: 1.6;
+        }
+    }
+
+    &__grid {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+    }
+}
+
+.problem-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba($color-primary, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: #1a1433;
+    /* Placeholder dark background */
+
+    /* Dynamic Grid Staggering */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        &:nth-child(even) {
+            margin-top: 3rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        &:nth-child(3n+2) {
+            margin-top: 3rem;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.8s ease;
+        z-index: 1;
+        opacity: 0.5;
+        /* Always slightly visible */
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(#0b0710, 1) 0%, rgba(#0b0710, 0.8) 40%, transparent 100%);
+        z-index: 2;
+        transition: opacity 0.5s ease;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 3;
+        transform: translateY(15px);
+        transition: transform 0.5s ease;
+
+        i {
+            font-size: 2.5rem;
+            color: rgba($color-secondary, 0.7);
+            margin-bottom: 1.2rem;
+            display: inline-block;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 0 5px rgba($color-secondary, 0.2));
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            opacity: 0.8;
+            transition: opacity 0.5s ease;
+        }
+    }
+
+    /* Hover Effects */
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba($color-primary, 0.3);
+        border-color: rgba($color-primary, 0.5);
+
+        .problem-card__bg {
+            transform: scale(1.1);
+            opacity: 0.7;
+        }
+
+        .problem-card__overlay {
+            background: linear-gradient(to top, rgba(#0b0710, 0.95) 0%, rgba(#0b0710, 0.5) 60%, transparent 100%);
+        }
+
+        .problem-card__content {
+            transform: translateY(0);
+
+            i {
+                transform: scale(1.15);
+                color: $color-primary;
+                filter: drop-shadow(0 0 15px $color-primary);
+            }
+
+            p {
+                opacity: 1;
+                color: white;
+            }
         }
     }
 }

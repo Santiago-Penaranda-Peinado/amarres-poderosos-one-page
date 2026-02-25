@@ -1,100 +1,103 @@
-// Ubicación: /app/src/scss/layout/_header.scss
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    /* Inicial: Transparente y se funde con el hero */
-    background-color: transparent;
     z-index: 1000;
-    border-bottom: 1px solid transparent;
-    /* Extra-smooth transition for glassmorphism */
-    transition: background-color 0.6s cubic-bezier(0.25, 1, 0.5, 1),
-        backdrop-filter 0.6s cubic-bezier(0.25, 1, 0.5, 1),
-        box-shadow 0.6s ease,
-        border-bottom 0.6s ease;
+    /* transition is applied to ::before and inner elements now */
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: transparent;
+        z-index: -1;
+        transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
     &__nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 100px;
-        /* Inicialmente más alto */
-        transition: height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        height: 95px;
+        transition: height 0.6s ease;
+        position: relative;
+        z-index: 2;
+        /* keep nav above the ::before background */
     }
 
-    /* Estado Scrolleado: Materialización Glassmorphism */
     &.is-scrolled {
-        background-color: rgba($color-bg-dark, 0.85);
-        /* 85% opacity */
-        backdrop-filter: blur(15px);
-        /* Stronger blur for smoother appearance */
-        -webkit-backdrop-filter: blur(15px);
-        /* Safari support */
-        border-bottom: 1px solid rgba($color-primary, 0.15);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        &::before {
+            background-color: rgba($color-bg-dark, 0.95);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border-bottom: 1px solid rgba($color-primary, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+        }
 
         .header__nav {
-            height: 75px;
-            /* Se achica suavemente al hacer scroll */
+            height: 78px;
         }
     }
 
+    /* Logo místico con pulso */
     &__logo {
         font-family: $font-title;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        /* Reduced from 1.7rem */
         color: $color-primary;
         text-transform: uppercase;
         font-weight: 700;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-        z-index: 1001;
-        /* Sobre el menú móvil */
+        gap: 8px;
+        /* Reduced from 14px */
+        letter-spacing: 1px;
+        position: relative;
+        text-align: left;
+        line-height: 1.1;
+        max-width: 150px;
+        /* Force text to wrap neatly */
 
-        i {
+        .logo-icon {
+            font-size: 1.8rem;
+            /* Reduced from 2.1rem */
             color: $color-secondary;
-            transition: transform $transition-fast;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 0 10px currentColor);
+            animation: moonPulse 5s ease-in-out infinite;
         }
 
-        &:hover i {
-            transform: scale(1.1) rotate(5deg);
+        &:hover .logo-icon {
+            transform: rotate(20deg) scale(1.12);
+            filter: drop-shadow(0 0 20px $color-secondary);
         }
     }
 
     &__menu {
         display: flex;
+        gap: 2rem;
+        /* Reduced from 2.5rem */
+        align-items: center;
 
-        /* Mobile Menu Setup (Overlay) */
         @media (max-width: 991px) {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba($color-bg-dark, 0.98);
-            backdrop-filter: blur(20px);
+            inset: 0;
+            background: linear-gradient(135deg, rgba(#0b0710, 0.98), rgba(#1a1433, 0.97));
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            gap: 2.5rem;
+            gap: 2.8rem;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(-20px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1000;
+            transform: scale(0.95);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
 
             &.is-open {
                 opacity: 1;
                 visibility: visible;
-                transform: translateY(0);
+                transform: scale(1);
             }
-        }
-
-        /* Desktop Menu Setup */
-        @media (min-width: 992px) {
-            gap: 2.5rem;
-            align-items: center;
         }
     }
 
@@ -102,98 +105,185 @@
         color: $color-text;
         font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        transition: color $transition-fast;
+        letter-spacing: 1.5px;
+        /* Reduced from 2px */
+        font-size: 0.82rem;
+        /* Reduced from 0.92rem */
         position: relative;
-        padding: 0.5rem 0;
+        padding: 6px 0;
 
-        /* Mobile Link Size */
         @media (max-width: 991px) {
-            font-size: 1.3rem;
-            opacity: 0;
-            transform: translateY(20px);
+            font-size: 1.5rem;
         }
 
-        /* Desktop specific styling */
-        @media (min-width: 992px) {
-            font-size: 0.85rem;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $color-primary;
+            transition: width 0.4s ease;
+        }
+
+        &:hover {
+            color: $color-primary;
 
             &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0;
-                height: 1px;
-                background-color: $color-primary;
-                transition: width $transition-medium;
+                width: 100%;
+            }
+        }
+
+        &.active {
+            color: $color-primary;
+
+            &::after {
+                width: 100%;
+                box-shadow: 0 0 12px rgba($color-primary, 0.8);
+            }
+        }
+    }
+
+    /* Botón CTA pulsante dorado */
+    .header__cta {
+        color: $color-primary !important;
+        font-weight: 700;
+        padding: 10px 24px;
+        border: 1px solid $color-primary;
+        /* Reduce border thickness */
+        border-radius: 50px;
+        box-shadow: 0 0 20px rgba($color-primary, 0.5);
+        animation: ctaPulse 2.2s infinite alternate ease-in-out;
+        transition: all 0.4s ease;
+
+        /* Strip inherited pseudo-element underline */
+        &::after {
+            display: none !important;
+        }
+
+        &:hover {
+            background: rgba($color-primary, 0.12);
+            box-shadow: 0 0 30px rgba($color-primary, 0.8);
+            transform: translateY(-2px);
+        }
+    }
+
+    /* Hamburger puro CSS */
+    .nav-toggle {
+        display: none;
+        width: 34px;
+        height: 28px;
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+
+        .hamburger-line {
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: $color-primary;
+            border-radius: 3px;
+            transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+        }
+
+        .hamburger-line:nth-child(1) {
+            top: 2px;
+        }
+
+        .hamburger-line:nth-child(2) {
+            top: 12px;
+        }
+
+        .hamburger-line:nth-child(3) {
+            top: 22px;
+        }
+
+        &.is-active {
+            .hamburger-line:nth-child(1) {
+                top: 12px;
+                transform: rotate(135deg);
             }
 
-            &:hover {
-                color: $color-primary;
-
-                &::after {
-                    width: 100%;
-                }
+            .hamburger-line:nth-child(2) {
+                opacity: 0;
+                transform: scale(0.2);
             }
+
+            .hamburger-line:nth-child(3) {
+                top: 12px;
+                transform: rotate(-135deg);
+            }
+        }
+
+        @media (max-width: 991px) {
+            display: block;
         }
     }
 }
 
-/* Animación en cascada para los enlaces en móvil */
+/* Animaciones */
+@keyframes moonPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes ctaPulse {
+    from {
+        box-shadow: 0 0 20px rgba($color-primary, 0.5);
+    }
+
+    to {
+        box-shadow: 0 0 45px rgba($color-primary, 0.9);
+    }
+}
+
+/* Animación cascada móvil */
 .header__menu.is-open .header__link {
-    animation: fadeUp 0.5s ease forwards;
+    animation: linkPop 0.6s backwards;
 }
 
 .header__menu.is-open .header__link:nth-child(1) {
-    animation-delay: 0.1s;
+    animation-delay: 80ms;
 }
 
 .header__menu.is-open .header__link:nth-child(2) {
-    animation-delay: 0.2s;
+    animation-delay: 160ms;
 }
 
 .header__menu.is-open .header__link:nth-child(3) {
-    animation-delay: 0.3s;
+    animation-delay: 240ms;
 }
 
 .header__menu.is-open .header__link:nth-child(4) {
-    animation-delay: 0.4s;
+    animation-delay: 320ms;
 }
 
 .header__menu.is-open .header__link:nth-child(5) {
-    animation-delay: 0.5s;
+    animation-delay: 400ms;
 }
 
-@keyframes fadeUp {
+.header__menu.is-open .header__link:nth-child(6) {
+    animation-delay: 480ms;
+}
+
+@keyframes linkPop {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
     to {
         opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Nav Toggle Button (Hamburger) */
-.nav-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    color: $color-primary;
-    background: transparent;
-    border: 1px solid transparent;
-    transition: all $transition-fast;
-    z-index: 1001;
-    /* Sobre el menú de fondo para poder cerrarlo */
-
-    &:hover {
-        background: rgba($color-primary, 0.1);
-        border-color: rgba($color-primary, 0.3);
-    }
-
-    @media (min-width: 992px) {
-        display: none;
+        transform: translateY(0) scale(1);
     }
 }

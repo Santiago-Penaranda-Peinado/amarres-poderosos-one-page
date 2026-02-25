@@ -1,4 +1,3 @@
-<!-- Ubicación: /app/index.html -->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -12,242 +11,487 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <!-- Main SCSS -->
     <link rel="stylesheet" href="/src/scss/main.scss" />
   </head>
   <body>
     <!-- FIXED HEADER NAV -->
     <header class="header">
-      <div class="container header__nav">
-        <a href="#" class="header__logo">
-          <i class="fas fa-moon"></i> Amarres
+    <div class="container header__nav">
+        <a href="#" class="header__logo" aria-label="Amarres Poderosos">
+        <span class="logo-icon">
+            <i class="fas fa-moon"></i>
+        </span>
+        <span class="logo-text">Amarres Poderosos</span>
         </a>
-        
+
         <nav class="header__menu" id="nav-menu">
-          <a href="#problemas" class="header__link">¿Problemas?</a>
-          <a href="#propuesta" class="header__link">Mi Ayuda</a>
-          <a href="#servicios" class="header__link">Servicios</a>
-          <a href="#testimonios" class="header__link">Testimonios</a>
-          <a href="#urgencia" class="header__link text-gold" style="font-weight: 700;">Consulta</a>
+        <a href="#problemas" class="header__link">¿Problemas?</a>
+        <a href="#propuesta" class="header__link">Mi Ayuda</a>
+        <a href="#servicios" class="header__link">Servicios</a>
+        <a href="#beneficios" class="header__link">Beneficios</a>
+        <a href="#testimonios" class="header__link">Testimonios</a>
+        <a href="#urgencia" class="header__link header__cta">Consulta Ahora</a>
         </nav>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú">
-          <i class="fas fa-bars"></i>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
         </button>
-      </div>
+    </div>
     </header>
 
     <main id="app">
+      <!-- 1. SECCIÓN HERO -->
+      <section id="hero" class="hero">
+        <!-- Partículas integradas como fondo dinámico del Hero -->
+        <div id="particles-js" class="particles-container"></div>
         
-        <!-- 1. SECCIÓN HERO -->
-        <section id="hero" class="hero slide-up">
-            <div class="hero__content container">
-                <h1>Recupera el amor de esa persona especial antes de que sea demasiado tarde</h1>
-                <p class="hero__subtitle">Atención personalizada y confidencial. Analizo tu situación y te digo exactamente qué está pasando y qué puedes hacer para recuperar la conexión emocional.</p>
-                
-                <div class="hero__actions">
-                    <a href="#whatsapp" class="btn btn--primary btn--large">
-                        <i class="fab fa-whatsapp"></i> Hablar ahora por WhatsApp
-                    </a>
-                    <a href="#llamar" class="btn btn--secondary btn--large">
-                        <i class="fas fa-phone-alt"></i> Llamar para consulta inmediata
-                    </a>
-                </div>
-                
-                <p class="hero__trust">
-                    Consulta privada &bull; Respuesta rápida &bull; Atención confidencial
-                </p>
+        <div class="container hero__layout">
+          <!-- Columna Izquierda -->
+          <div class="hero__text">
+            <span class="hero__badge fade-in">Magia de Alto Nivel</span>
+            <h1 class="slide-up">Recupera el amor de esa persona especial antes de que sea demasiado tarde</h1>
+            <p class="hero__subtitle fade-in">Atención personalizada y confidencial. Analizo tu situación y te digo exactamente qué está pasando y qué puedes hacer para recuperar la conexión emocional.</p>
+            
+            <div class="hero__actions fade-in">
+              <a href="#whatsapp" class="btn btn--primary btn--large glow-on-hover">
+                <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+              </a>
+              <a href="#llamar" class="btn btn--secondary btn--large glow-on-hover">
+                <i class="fas fa-phone-alt"></i> Consulta Inmediata
+              </a>
             </div>
-        </section>
-
-        <!-- 2. IDENTIFICACIÓN DEL PROBLEMA -->
-        <section id="problemas" class="section section--light slide-up">
-            <div class="container">
-                <div class="section__header">
-                    <h2>Si estás pasando por alguna de estas situaciones, puedo ayudarte:</h2>
+            
+            <p class="hero__trust fade-in"><i class="fas fa-shield-alt"></i> Consulta 100% privada • Trato confidencial</p>
+          </div>
+          
+          <!-- Columna Derecha -->
+          <div class="hero__visual fade-in">
+            <div class="hero__image-wrapper">
+              <div class="hero__glow-ring"></div>
+              
+              <img src="/assets/images/hero/recupera-tu-pareja.jpg" alt="Ritual de Unión" class="hero__img" />
+              
+              <div class="hero__floating-badge">
+                <i class="fas fa-moon"></i>
+                <div class="badge-text">
+                  <span class="badge-title">Resultados</span>
+                  <span class="badge-sub">Garantizados</span>
                 </div>
-                <ul class="problem-list">
-                    <li>Tu pareja se alejó sin explicación</li>
-                    <li>Hay frialdad o distancia emocional</li>
-                    <li>Tu ex dejó de hablarte o responder</li>
-                    <li>Existe una tercera persona</li>
-                    <li>La relación ya no es como antes</li>
-                    <li>Sientes que estás perdiendo a quien amas</li>
-                </ul>
-                <p class="text-center text-gold" style="font-weight: 600;">Cada situación tiene una causa específica. Lo primero es identificarla correctamente.</p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- 3. PROPUESTA DE VALOR -->
-        <section id="propuesta" class="section section--dark slide-up">
-            <div class="container">
-                <div class="section__header">
-                    <h2>Consulta personalizada y análisis real de tu situación</h2>
-                </div>
-                <div class="value-prop">
-                    <p>No todos los casos son iguales. Por eso, la atención es completamente personalizada.</p>
-                    <p>Analizo tu caso, identifico los factores que están afectando tu relación y te explico las opciones disponibles.</p>
-                    <p class="text-gold" style="font-weight: bold; margin-top: 2rem;">Todo con absoluta confidencialidad.</p>
-                </div>
+      <!-- 2. SECCIÓN DE IDENTIFICACIÓN DEL PROBLEMA (Grid Central Místico) -->
+      <section id="problemas" class="section section--dark problems">
+        <div class="container">
+          
+          <div class="problems__header fade-in">
+             <span class="hero__badge">Diagnóstico Energético</span>
+             <h2>Si estás pasando por alguna de estas situaciones, puedo ayudarte</h2>
+             <p class="problems__desc">Cada situación tiene una causa espiritual o emocional específica. Lo primero es identificarla correctamente para saber cómo actuar.</p>
+             <p class="text-gold" style="font-weight: 600; font-size: 1.1rem; margin-top: 1.5rem;">No es casualidad, es energía bloqueada.</p>
+          </div>
+          
+          <div class="problems__grid">
+            <!-- Síntoma 1 -->
+            <div class="problem-card fade-in">
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/alejamiento.jpg');"></div>
+              <div class="problem-card__overlay"></div>
+              <div class="problem-card__content">
+                <i class="fas fa-door-open"></i>
+                <h3>Alejamiento Sin Explicación</h3>
+                <p>Tu pareja se marchó bruscamente y cortó la comunicación sin dar razones lógicas o claras.</p>
+              </div>
             </div>
-        </section>
 
-        <!-- 4. SERVICIOS ESPECIALIZADOS -->
-        <section id="servicios" class="section section--light slide-up">
-            <div class="container">
-                <div class="section__header">
-                    <h2>Servicios espirituales personalizados para tu situación sentimental</h2>
-                    <p class="hero__subtitle" style="margin-top: 1rem;">Cada caso es diferente. Por eso trabajamos con soluciones específicas según tu problema emocional.</p>
-                </div>
-                
-                <div class="grid">
-                    <!-- Servicio 1 -->
-                    <div class="card">
-                        <div class="card__icon"><i class="fas fa-heart"></i></div>
-                        <h3 class="card__title">1. Amarres de Amor</h3>
-                        <p style="color: #aaaaaa; margin-bottom: 1.5rem;">Para recuperar o fortalecer una relación que se está perdiendo.</p>
-                        <ul class="card__list">
-                            <li>Reconciliación con tu ex pareja</li>
-                            <li>Restauración del vínculo emocional</li>
-                            <li>Alejar interferencias externas</li>
-                        </ul>
-                        <a href="#whatsapp" class="btn btn--primary card__btn"><i class="fab fa-whatsapp"></i> Recuperar a mi Ex</a>
-                    </div>
-                    
-                    <!-- Servicio 2 -->
-                    <div class="card">
-                        <div class="card__icon"><i class="fas fa-link"></i></div>
-                        <h3 class="card__title">2. Unión de Parejas</h3>
-                        <p style="color: #aaaaaa; margin-bottom: 1.5rem;">Para fortalecer relaciones actuales y evitar rupturas.</p>
-                        <ul class="card__list">
-                            <li>Reavivar la pasión</li>
-                            <li>Mejorar comunicación</li>
-                            <li>Fortalecer compromiso</li>
-                        </ul>
-                        <a href="#whatsapp" class="btn btn--primary card__btn"><i class="fab fa-whatsapp"></i> Fortalecer mi relación</a>
-                    </div>
-
-                    <!-- Servicio 3 -->
-                    <div class="card">
-                        <div class="card__icon"><i class="fas fa-star"></i></div>
-                        <h3 class="card__title">3. Magia Blanca</h3>
-                        <p style="color: #aaaaaa; margin-bottom: 1.5rem;">Trabajos espirituales enfocados en armonía y energía positiva.</p>
-                        <ul class="card__list">
-                            <li>Endulzamientos</li>
-                            <li>Apertura de caminos amorosos</li>
-                            <li>Armonización sentimental</li>
-                        </ul>
-                        <a href="#whatsapp" class="btn btn--primary card__btn"><i class="fab fa-whatsapp"></i> Salvar mi Relación</a>
-                    </div>
-
-                    <!-- Servicio 4 -->
-                    <div class="card">
-                        <div class="card__icon"><i class="fas fa-venus-mars"></i></div>
-                        <h3 class="card__title">4. Amarres mismo sexo</h3>
-                        <p style="color: #aaaaaa; margin-bottom: 1.5rem;">Trabajos personalizados para relaciones diversas.</p>
-                        <ul class="card__list">
-                            <li>Recuperación de pareja</li>
-                            <li>Fortalecimiento emocional</li>
-                            <li>Unión estable</li>
-                        </ul>
-                        <a href="#whatsapp" class="btn btn--primary card__btn"><i class="fab fa-whatsapp"></i> Consulta privada ahora</a>
-                    </div>
-
-                    <!-- Servicio 5 -->
-                    <div class="card">
-                        <div class="card__icon"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="card__title">5. Limpias y Protección</h3>
-                        <p style="color: #aaaaaa; margin-bottom: 1.5rem;">Elimina bloqueos energéticos que afectan tu relación.</p>
-                        <ul class="card__list">
-                            <li>Limpieza espiritual</li>
-                            <li>Protección contra terceros</li>
-                            <li>Liberación de energías negativas</li>
-                        </ul>
-                        <a href="#whatsapp" class="btn btn--primary card__btn"><i class="fab fa-whatsapp"></i> Necesito limpieza</a>
-                    </div>
-
-                    <!-- Servicio 6 -->
-                    <div class="card">
-                        <div class="card__icon"><i class="fas fa-eye"></i></div>
-                        <h3 class="card__title">6. Lectura de Cartas</h3>
-                        <p style="color: #aaaaaa; margin-bottom: 1.5rem;">Diagnóstico espiritual para entender qué está ocurriendo realmente.</p>
-                        <ul class="card__list">
-                            <li>Situación actual</li>
-                            <li>Energías que influyen</li>
-                            <li>Probabilidades futuras</li>
-                        </ul>
-                        <a href="#whatsapp" class="btn btn--primary card__btn"><i class="fab fa-whatsapp"></i> Solicitar lectura ahora</a>
-                    </div>
-                </div>
+            <!-- Síntoma 2 -->
+            <div class="problem-card fade-in">
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/frialdad.jpg');"></div>
+              <div class="problem-card__overlay"></div>
+              <div class="problem-card__content">
+                <i class="fas fa-snowflake"></i>
+                <h3>Frialdad y Distancia</h3>
+                <p>Sientes un trato frío, distante o evasivo. Ya no hay la misma intimidad física ni química de antes.</p>
+              </div>
             </div>
-        </section>
 
-        <!-- 5. BENEFICIOS -->
-        <section id="beneficios" class="section section--dark slide-up">
-            <div class="container">
-                <div class="section__header">
-                    <h2>Por qué las personas me contactan:</h2>
-                </div>
-                <ul class="benefits-list">
-                    <li>Atención directa y personalizada</li>
-                    <li>Consulta privada y confidencial</li>
-                    <li>Análisis específico de tu caso</li>
-                    <li>Respuesta rápida por WhatsApp o llamada</li>
-                    <li>Seriedad y discreción absoluta</li>
-                </ul>
+            <!-- Síntoma 3 -->
+            <div class="problem-card fade-in">
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/bloqueo.jpg');"></div>
+              <div class="problem-card__overlay"></div>
+              <div class="problem-card__content">
+                <i class="fas fa-comment-slash"></i>
+                <h3>Bloqueo Completo</h3>
+                <p>Tu ex pareja te ha bloqueado de sus redes, llamadas o simplemente ignoró todos tus mensajes repetidamente.</p>
+              </div>
             </div>
-        </section>
 
-        <!-- 6. TESTIMONIOS -->
-        <section id="testimonios" class="section section--light slide-up">
-            <div class="container">
-                <div class="section__header">
-                    <h2>Testimonios de quienes confiaron en mí</h2>
-                </div>
-                <div class="grid">
-                    <div class="testimonial">
-                        <p>"Mi pareja dejó de hablarme completamente. Después de la consulta entendí la situación y poco a poco volvimos a tener contacto."</p>
-                        <div class="testimonial__author">— Mariana G.</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"Estaba desesperado porque mi relación terminó de repente. La orientación que recibí me ayudó a recuperar la comunicación."</p>
-                        <div class="testimonial__author">— Carlos R.</div>
-                    </div>
-                    <div class="testimonial">
-                        <p>"No sabía qué hacer ni qué estaba pasando. La consulta fue clara y me ayudó a entender todo."</p>
-                        <div class="testimonial__author">— Andrea M.</div>
-                    </div>
-                </div>
+            <!-- Síntoma 4 -->
+            <div class="problem-card fade-in">
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/terceras-personas.jpg');"></div>
+              <div class="problem-card__overlay"></div>
+              <div class="problem-card__content">
+                <i class="fas fa-user-secret"></i>
+                <h3>Terceras Personas</h3>
+                <p>Existe intrusión de familiares tóxicos, exparejas envidiosas o un amante destruyendo el núcleo amoroso.</p>
+              </div>
             </div>
-        </section>
 
-        <!-- 7. URGENCIA -->
-        <section id="urgencia" class="urgency slide-up">
-            <div class="container">
-                <h2>Entre más esperas, más difícil puede volverse la situación</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">Las decisiones que tomes ahora pueden marcar la diferencia.</p>
-                <p style="font-size: 1.2rem;">No dejes que la distancia emocional aumente.</p>
-                
-                <p class="text-gold" style="font-size: 1.5rem; font-weight: bold; margin-top: 2rem; margin-bottom: 2rem;">Consulta ahora de forma privada</p>
-                
-                <div class="hero__actions">
-                    <a href="#whatsapp" class="btn btn--primary btn--large">
-                        <i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp ahora
-                    </a>
-                    <a href="#llamar" class="btn btn--secondary btn--large">
-                        <i class="fas fa-phone-alt"></i> Llamar ahora
-                    </a>
-                </div>
-                
-                <p class="hero__trust">
-                    Respuesta directa &bull; Atención confidencial &bull; Consulta privada
-                </p>
+            <!-- Síntoma 5 -->
+            <div class="problem-card fade-in">
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/rutina.jpg');"></div>
+              <div class="problem-card__overlay"></div>
+              <div class="problem-card__content">
+                <i class="fas fa-heart-broken"></i>
+                <h3>Rutina y Desamor</h3>
+                <p>La relación cayó en la monotonía destructiva y sientes que estás perdiendo el respeto de quien amas.</p>
+              </div>
             </div>
-        </section>
+
+            <!-- Síntoma 6 -->
+            <div class="problem-card fade-in">
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/tiempo.jpg');"></div>
+              <div class="problem-card__overlay"></div>
+              <div class="problem-card__content">
+                <i class="fas fa-hourglass-half"></i>
+                <h3>Pérdida de Tiempo</h3>
+                <p>Sientes que los problemas avanzan y la situación empeora sin control cada día que pasa.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 3. SECCIÓN DE PROPUESTA DE VALOR -->
+      <section id="propuesta" class="section propuesta parallax" style="background-image: url('/assets/images/propuesta-bg.jpg');">
+        <div class="propuesta__overlay"></div>
         
-        <footer style="text-align: center; padding: 2rem; border-top: 1px solid rgba(212, 175, 55, 0.2); background-color: #0b0710;">
-            <p style="color: #aaaaaa; font-size: 0.9rem;">&copy; 2026 Amarres Poderosos. Todos los derechos reservados.</p>
-        </footer>
+        <div class="container relative z-10">
+          <div class="propuesta__split">
+            <!-- Columna Visual (Izquierda) -->
+            <div class="propuesta__visual slide-up">
+              <div class="propuesta__frame">
+                <div class="propuesta__image" style="background-image: url('/assets/images/propuesta-lectura.jpg');"></div>
+                <div class="propuesta__glow"></div>
+              </div>
+            </div>
+
+            <!-- Columna Contenido (Derecha) -->
+            <div class="propuesta__content slide-up" style="transition-delay: 0.2s;">
+              <div class="badge fade-in">Mi Ayuda Espiritual</div>
+              <h2 class="title fade-in">Consulta Personalizada y Análisis Profundo</h2>
+              <p class="desc fade-in">No todos los caminos se cierran de forma natural. Analizo tu caso específico para identificar los factores y bloqueos energéticos ocultos que están afectando tu relación. Todo con absoluta honestidad y reservas confidenciales.</p>
+              
+              <ul class="propuesta__list fade-in">
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <span><strong>Análisis Energético:</strong> Descubrimos la raíz espiritual del conflicto.</span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <span><strong>Identificación de Bloqueos:</strong> Evaluamos si hay terceras personas o envidias.</span>
+                </li>
+                <li>
+                  <i class="fas fa-check-circle"></i>
+                  <span><strong>Confidencialidad Absoluta:</strong> Todo bajo el más estricto secreto profesional.</span>
+                </li>
+              </ul>
+
+              <a href="#contacto" class="btn btn--ghost mt-4 fade-in">Consultar Mi Caso Ahora</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. SECCIÓN: Servicios Especializados -->
+      <section id="servicios" class="section section--dark">
+        <div class="container">
+          <h2>Servicios espirituales personalizados para tu situación sentimental</h2>
+          <p class="subtitle">Cada caso es diferente. Por eso trabajamos con soluciones específicas según tu problema emocional.</p>
+          <div class="grid services-grid">
+            <!-- Tarjeta 1: Amarres de Amor -->
+            <div class="card flip-card section-reveal">
+              <div class="card-inner">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/amarres-de-amor.jpg');">
+                  <div class="card-front__overlay"></div>
+                  <div class="card-front__content">
+                    <i class="fas fa-heart"></i>
+                    <h3>Amarres de Amor</h3>
+                    <p>Para recuperar o fortalecer una relación que se está perdiendo.</p>
+                  </div>
+                </div>
+                <div class="card-back glass-panel">
+                  <div class="card-back__content">
+                    <ul>
+                      <li><i class="fas fa-check"></i> Reconciliación total</li>
+                      <li><i class="fas fa-check"></i> Restauración del vínculo</li>
+                      <li><i class="fas fa-check"></i> Protección contra rupturas</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--primary">Recuperar a mi Ex</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 2: Unión de Parejas -->
+            <div class="card flip-card section-reveal" style="transition-delay: 0.1s;">
+              <div class="card-inner">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/union-parejas.jpg');">
+                  <div class="card-front__overlay"></div>
+                  <div class="card-front__content">
+                    <i class="fas fa-ring"></i>
+                    <h3>Unión de Parejas</h3>
+                    <p>Para fortalecer relaciones actuales y evitar rupturas definitivas.</p>
+                  </div>
+                </div>
+                <div class="card-back glass-panel">
+                  <div class="card-back__content">
+                    <ul>
+                      <li><i class="fas fa-check"></i> Reavivar la pasión</li>
+                      <li><i class="fas fa-check"></i> Mejorar comunicación</li>
+                      <li><i class="fas fa-check"></i> Fortalecer el compromiso</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--primary">Unir mi Relación</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 3: Magia Blanca -->
+            <div class="card flip-card section-reveal" style="transition-delay: 0.2s;">
+              <div class="card-inner">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/magia-blanca.jpg');">
+                  <div class="card-front__overlay"></div>
+                  <div class="card-front__content">
+                    <i class="fas fa-dove"></i>
+                    <h3>Magia Blanca y Hechizos</h3>
+                    <p>Trabajos espirituales puros enfocados en armonía y luz.</p>
+                  </div>
+                </div>
+                <div class="card-back glass-panel">
+                  <div class="card-back__content">
+                    <ul>
+                      <li><i class="fas fa-check"></i> Endulzamientos puros</li>
+                      <li><i class="fas fa-check"></i> Apertura de caminos</li>
+                      <li><i class="fas fa-check"></i> Atracción magnética</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--primary">Sanar con Luz</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 4: Amarres Mismo Sexo -->
+            <div class="card flip-card section-reveal" style="transition-delay: 0.3s;">
+              <div class="card-inner">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/amarres-mismo-sexo.jpg');">
+                  <div class="card-front__overlay"></div>
+                  <div class="card-front__content">
+                    <i class="fas fa-rainbow"></i>
+                    <h3>Amarres LGBT</h3>
+                    <p>Trabajos energéticos personalizados para diversidad sexual.</p>
+                  </div>
+                </div>
+                <div class="card-back glass-panel">
+                  <div class="card-back__content">
+                    <ul>
+                      <li><i class="fas fa-check"></i> Retorno de pareja LGBT</li>
+                      <li><i class="fas fa-check"></i> Conexión de almas gemelas</li>
+                      <li><i class="fas fa-check"></i> Estabilidad matrimonial</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--primary">Consulta Privada</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 5: Limpias y Protecciones -->
+            <div class="card flip-card section-reveal" style="transition-delay: 0.4s;">
+              <div class="card-inner">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/limpias-protecciones.jpg');">
+                  <div class="card-front__overlay"></div>
+                  <div class="card-front__content">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Limpias Energéticas</h3>
+                    <p>Eliminación profunda de entidades y bloqueos que afectan tu amor.</p>
+                  </div>
+                </div>
+                <div class="card-back glass-panel">
+                  <div class="card-back__content">
+                    <ul>
+                      <li><i class="fas fa-check"></i> Barridos energéticos</li>
+                      <li><i class="fas fa-check"></i> Despojo de envidias</li>
+                      <li><i class="fas fa-check"></i> Escudo protector áurico</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--primary">Necesito Protección</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 6: Lectura de Cartas -->
+            <div class="card flip-card section-reveal" style="transition-delay: 0.5s;">
+              <div class="card-inner">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/lectura-cartas.jpg');">
+                  <div class="card-front__overlay"></div>
+                  <div class="card-front__content">
+                    <i class="fas fa-star-and-crescent"></i>
+                    <h3>Lectura de Cartas</h3>
+                    <p>Diagnóstico espiritual exacto para entender qué está ocurriendo.</p>
+                  </div>
+                </div>
+                <div class="card-back glass-panel">
+                  <div class="card-back__content">
+                    <ul>
+                      <li><i class="fas fa-check"></i> Revelación de intenciones</li>
+                      <li><i class="fas fa-check"></i> Análisis de infidelidad</li>
+                      <li><i class="fas fa-check"></i> Guía paso a paso</li>
+                    </ul>
+                    <a href="#contacto" class="btn btn--primary">Agendar Lectura</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. SECCIÓN DE BENEFICIOS (Bento Box) -->
+      <section id="beneficios" class="section section--dark parallax" style="background-image: url('./assets/images/beneficios-bg.jpg');">
+        <div class="container">
+          <div class="section-header text-center section-reveal">
+            <span class="badge badge--glow">¿Por qué elegirme?</span>
+            <h2>Beneficios de mi consulta</h2>
+            <p class="subtitle">Atención ética, profesional y enfocada en resultados reales para tu situación.</p>
+          </div>
+
+          <div class="bento-grid">
+            
+            <div class="bento-card bento-card--large section-reveal">
+              <div class="bento-card__glow"></div>
+              <div class="bento-card__content">
+                <div class="bento-card__icon">
+                  <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Atención Directa y Personalizada</h3>
+                <p>No hablas con asistentes ni bots. Yo analizo tu caso personalmente para garantizar que el trabajo espiritual tenga la máxima efectividad y precisión desde el primer momento.</p>
+              </div>
+            </div>
+
+            <div class="bento-card section-reveal" style="transition-delay: 0.1s;">
+              <div class="bento-card__glow"></div>
+              <div class="bento-card__content">
+                <div class="bento-card__icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <h3>Privacidad Absoluta</h3>
+                <p>Tu consulta y tus datos están protegidos bajo el más estricto secreto profesional.</p>
+              </div>
+            </div>
+
+            <div class="bento-card section-reveal" style="transition-delay: 0.2s;">
+              <div class="bento-card__glow"></div>
+              <div class="bento-card__content">
+                <div class="bento-card__icon">
+                  <i class="fas fa-search-location"></i>
+                </div>
+                <h3>Análisis Específico</h3>
+                <p>Estudio tu energía y la de tu pareja antes de recomendar cualquier trabajo espiritual.</p>
+              </div>
+            </div>
+
+            <div class="bento-card section-reveal" style="transition-delay: 0.3s;">
+              <div class="bento-card__glow"></div>
+              <div class="bento-card__content">
+                <div class="bento-card__icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <h3>Respuesta Rápida</h3>
+                <p>Disponibilidad inmediata vía WhatsApp para resolver dudas durante tu proceso.</p>
+              </div>
+            </div>
+
+            <div class="bento-card bento-card--wide section-reveal" style="transition-delay: 0.4s;">
+              <div class="bento-card__glow"></div>
+              <div class="bento-card__content">
+                <div class="bento-card__icon">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Seriedad y Honestidad Garantizada</h3>
+                <p>Hablo con la verdad sobre las posibilidades reales de tu caso. Si un trabajo no es viable o no es lo que necesitas, te lo diré de frente. Mi prioridad es tu bienestar espiritual.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. SECCIÓN DE TESTIMONIOS -->
+      <section id="testimonios" class="section section--dark">
+        <div class="container">
+          <h2>Testimonios</h2>
+          <div class="testimonial-grid grid">
+            <div class="testimonial">
+              <p>"Mi pareja dejó de hablarme completamente. Después de la consulta entendí la situación y poco a poco volvimos a tener contacto."</p>
+              <div class="testimonial__author">— Mariana G.</div>
+            </div>
+            <div class="testimonial">
+              <p>"Estaba desesperado porque mi relación terminó de repente. La orientación que recibí me ayudó a recuperar la comunicación."</p>
+              <div class="testimonial__author">— Carlos R.</div>
+            </div>
+            <div class="testimonial">
+              <p>"No sabía qué hacer ni qué estaba pasando. La consulta fue clara y me ayudó a entender todo."</p>
+              <div class="testimonial__author">— Andrea M.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. URGENCIA -->
+      <section id="urgencia" class="urgency section parallax" style="background-image: url('./assets/images/urgencia-background.jpg');"> <!-- Deja este path inexistente o cámbialo a mano -->
+        <div class="container fade-in">
+          <h2>Entre más esperas, más difícil puede volverse la situación</h2>
+          <p>Las decisiones que tomes ahora pueden marcar la diferencia. No dejes que la distancia emocional aumente.</p>
+          <p class="text-gold">Consulta ahora de forma privada</p>
+          <div class="hero__actions">
+            <a href="#whatsapp" class="btn btn--primary btn--large glow-on-hover">
+              <i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp ahora
+            </a>
+            <a href="#llamar" class="btn btn--secondary btn--large glow-on-hover">
+              <i class="fas fa-phone-alt"></i> Llamar ahora
+            </a>
+          </div>
+          <p class="hero__trust">Respuesta directa • Atención confidencial • Consulta privada</p>
+        </div>
+      </section>
+      
+      <footer class="footer">
+        <div class="container footer__content">
+          <div class="footer__brand">
+            <div class="footer__logo">
+              <i class="fas fa-moon"></i> Amarres Poderosos
+            </div>
+            <p>&copy; 2026 Todos los derechos reservados.</p>
+          </div>
+          <div class="footer__links">
+            <a href="#problemas">Problemas</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#testimonios">Testimonios</a>
+          </div>
+          <div class="footer__disclaimer">
+            <p>Los resultados pueden variar según cada caso. Servicio exclusivo para mayores de 18 años. Todo análisis se realiza con total ética y confidencialidad.</p>
+          </div>
+        </div>
+      </footer>
     </main>
     <script type="module" src="/src/js/main.js"></script>
   </body>

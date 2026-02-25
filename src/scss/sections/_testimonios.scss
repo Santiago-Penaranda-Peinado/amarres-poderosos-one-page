@@ -1,15 +1,27 @@
 // Ubicación: /app/src/scss/sections/_testimonios.scss
 .testimonial {
-    background: linear-gradient(to bottom right, rgba($color-bg-light, 0.9), rgba($color-bg-dark, 0.9));
+    background: rgba(#16102b, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 3rem 2.5rem;
-    border-radius: 10px;
+    border-radius: 16px;
     position: relative;
-    border-top: 3px solid $color-primary;
+    border: 1px solid rgba($color-primary, 0.15);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform $transition-medium;
+    transition: transform $transition-medium, border-color $transition-medium;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &:hover {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
+        border-color: rgba($color-primary, 0.4);
+
+        &::before {
+            color: rgba($color-primary, 0.1);
+            transform: scale(1.1) rotate(-5deg);
+        }
     }
 
     &::before {
@@ -17,21 +29,23 @@
         font-family: "Font Awesome 6 Free";
         font-weight: 900;
         position: absolute;
-        top: -20px;
-        left: 2rem;
-        font-size: 2.2rem;
-        color: $color-primary;
-        background: $color-bg-dark;
-        padding: 0 15px;
-        border-radius: 5px;
+        top: 20px;
+        right: 20px;
+        font-size: 8rem;
+        color: rgba($color-primary, 0.05);
+        z-index: 0;
+        transition: all $transition-medium;
+        pointer-events: none;
     }
 
     p {
         font-style: italic;
         font-size: 1.15rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
         line-height: 1.8;
         color: #e0e0e0;
+        position: relative;
+        z-index: 1;
     }
 
     &__author {
@@ -41,5 +55,17 @@
         font-family: $font-title;
         font-size: 1.1rem;
         letter-spacing: 1px;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background-color: $color-primary;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
     }
 }
