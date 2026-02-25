@@ -1,0 +1,44 @@
+.testimonial {
+    background: linear-gradient(to bottom right, rgba($color-bg-light, 0.9), rgba($color-bg-dark, 0.9));
+    padding: 3rem 2.5rem;
+    border-radius: 10px;
+    position: relative;
+    border-top: 3px solid $color-primary;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform $transition-medium;
+
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+    &::before {
+        content: '\f10d'; // quote-left
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        position: absolute;
+        top: -20px;
+        left: 2rem;
+        font-size: 2.2rem;
+        color: $color-primary;
+        background: $color-bg-dark;
+        padding: 0 15px;
+        border-radius: 5px;
+    }
+
+    p {
+        font-style: italic;
+        font-size: 1.15rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        color: #e0e0e0;
+    }
+
+    &__author {
+        font-weight: bold;
+        color: $color-primary;
+        text-align: right;
+        font-family: $font-title;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+}

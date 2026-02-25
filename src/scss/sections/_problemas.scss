@@ -1,0 +1,28 @@
+.problem-list {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+
+    li {
+        position: relative;
+        padding-left: 2rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        transition: transform $transition-fast;
+
+        &:hover {
+            transform: translateX(10px);
+            color: $color-primary;
+        }
+
+        &::before {
+            content: '\f06a';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: $color-secondary;
+            filter: drop-shadow(0 0 5px rgba($color-secondary, 0.5));
+        }
+    }
+}
