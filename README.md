@@ -100,3 +100,13 @@ El botón transaccional de WhatsApp carga su destino como formato internacional 
 
 desarrollado por: Santiago Peñaranda Peinado
 github: https://github.com/Santiago-Penaranda-Peinado
+
+
+## correcciones
+- Reducir el espacio entre secciones
+- Cambiar la imagen de la sección de "<!-- 3. SECCIÓN DE PROPUESTA DE VALOR -->"
+- Quitar el filtro oscuro sobre las imagenes de las tarjetas de la segunda sección
+- Revisar el responsivo
+- Reducir el tamaño general de todos los botones, el el hero, boner los dos botones al mismo nivel en la version de pc
+- Revisar los botones en la version de móvil
+- Rediseñar el grid de la seccion "<!-- 5. SECCIÓN DE BENEFICIOS (Bento Box) -->" se ha solicitado que reduzcamos el tamaño general de la seccion.
