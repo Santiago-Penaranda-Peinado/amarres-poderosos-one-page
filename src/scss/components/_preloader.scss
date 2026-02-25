@@ -1,0 +1,63 @@
+﻿// Ubicación: /app/src/scss/components/_preloader.scss
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #08050e;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s;
+
+    &.fade-out {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__spinner {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        animation: spin 2s linear infinite;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 3px solid transparent;
+        }
+
+        &::before {
+            border-top-color: $color-primary;
+            border-bottom-color: $color-secondary;
+            animation: pulse-ring 2s ease-in-out infinite alternate;
+        }
+
+        &::after {
+            border-left-color: rgba($color-primary, 0.4);
+            border-right-color: rgba($color-secondary, 0.4);
+            transform: rotate(45deg);
+        }
+    }
+    
+    &__logo {
+        position: absolute;
+        font-size: 1.8rem;
+        color: $color-primary;
+        animation: pulse 1.5s infinite alternate;
+    }
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 1; }
+}

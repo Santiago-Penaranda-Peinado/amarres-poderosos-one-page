@@ -1,0 +1,56 @@
+// Ubicación: /app/src/scss/components/_whatsapp.scss
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-medium;
+    text-decoration: none;
+
+    // Glowing pulse effect
+    animation: pulse-wa 2s infinite;
+
+    i {
+        margin-top: 2px; // optical alignment
+    }
+
+    &:hover {
+        transform: translateY(-5px) scale(1.05);
+        color: #fff;
+        background-color: lighten(#25d366, 5%);
+        box-shadow: 0 10px 25px rgba(#25d366, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+@keyframes pulse-wa {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}

@@ -24,3 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         retina_detect: true
     });
 });
+
+// Preloader Logic
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.classList.add('fade-out');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 800); // Matches CSS transition duration
+    }
+});
