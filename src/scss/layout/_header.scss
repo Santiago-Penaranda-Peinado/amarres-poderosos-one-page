@@ -1,19 +1,43 @@
+// Ubicación: /app/src/scss/layout/_header.scss
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba($color-bg-dark, 0.95);
-    backdrop-filter: blur(10px);
+    /* Inicial: Transparente y se funde con el hero */
+    background-color: transparent;
     z-index: 1000;
-    border-bottom: 1px solid rgba($color-primary, 0.2);
-    transition: all $transition-medium;
+    border-bottom: 1px solid transparent;
+    /* Extra-smooth transition for glassmorphism */
+    transition: background-color 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        backdrop-filter 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.6s ease,
+        border-bottom 0.6s ease;
 
     &__nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 80px;
+        height: 100px;
+        /* Inicialmente más alto */
+        transition: height 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Estado Scrolleado: Materialización Glassmorphism */
+    &.is-scrolled {
+        background-color: rgba($color-bg-dark, 0.85);
+        /* 85% opacity */
+        backdrop-filter: blur(15px);
+        /* Stronger blur for smoother appearance */
+        -webkit-backdrop-filter: blur(15px);
+        /* Safari support */
+        border-bottom: 1px solid rgba($color-primary, 0.15);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+
+        .header__nav {
+            height: 75px;
+            /* Se achica suavemente al hacer scroll */
+        }
     }
 
     &__logo {
@@ -22,22 +46,54 @@
         color: $color-primary;
         text-transform: uppercase;
         font-weight: 700;
-        text-decoration: none;
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        z-index: 1001;
+        /* Sobre el menú móvil */
 
         i {
             color: $color-secondary;
+            transition: transform $transition-fast;
+        }
+
+        &:hover i {
+            transform: scale(1.1) rotate(5deg);
         }
     }
 
     &__menu {
-        display: none;
+        display: flex;
 
+        /* Mobile Menu Setup (Overlay) */
+        @media (max-width: 991px) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: rgba($color-bg-dark, 0.98);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+
+            &.is-open {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        /* Desktop Menu Setup */
         @media (min-width: 992px) {
-            display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
     }
@@ -45,38 +101,97 @@
     &__link {
         color: $color-text;
         font-weight: 500;
-        font-size: 0.95rem;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         transition: color $transition-fast;
         position: relative;
+        padding: 0.5rem 0;
 
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: $color-primary;
-            transition: width $transition-fast;
+        /* Mobile Link Size */
+        @media (max-width: 991px) {
+            font-size: 1.3rem;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
-        &:hover {
-            color: $color-primary;
+        /* Desktop specific styling */
+        @media (min-width: 992px) {
+            font-size: 0.85rem;
 
             &::after {
-                width: 100%;
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: $color-primary;
+                transition: width $transition-medium;
+            }
+
+            &:hover {
+                color: $color-primary;
+
+                &::after {
+                    width: 100%;
+                }
             }
         }
     }
 }
 
-// Menú Móvil (Botón)
+/* Animación en cascada para los enlaces en móvil */
+.header__menu.is-open .header__link {
+    animation: fadeUp 0.5s ease forwards;
+}
+
+.header__menu.is-open .header__link:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.header__menu.is-open .header__link:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.header__menu.is-open .header__link:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.header__menu.is-open .header__link:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.header__menu.is-open .header__link:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Nav Toggle Button (Hamburger) */
 .nav-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     font-size: 1.5rem;
     color: $color-primary;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: all $transition-fast;
+    z-index: 1001;
+    /* Sobre el menú de fondo para poder cerrarlo */
+
+    &:hover {
+        background: rgba($color-primary, 0.1);
+        border-color: rgba($color-primary, 0.3);
+    }
 
     @media (min-width: 992px) {
         display: none;

@@ -1,3 +1,4 @@
+// Ubicación: /app/src/js/animations.js
 document.addEventListener('DOMContentLoaded', () => {
     // Scroll observer for fade-in elements
     const observerOptions = {
