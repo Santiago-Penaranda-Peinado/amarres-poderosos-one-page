@@ -1,9 +1,11 @@
 // Ubicación: /app/src/scss/layout/_layout.scss
 .section {
-    padding: 5rem 0;
+    padding: 3rem 0;
+    position: relative; // Ensure sections define stack context to prevent whitespace bleeding
+    margin: 0; // Prevent margin collapse from creating lines 
 
     @media (min-width: 992px) {
-        padding: 7rem 0;
+        padding: 4rem 0;
     }
 
     &--dark {

@@ -12,9 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!-- Particles.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
     <!-- Main SCSS -->
     <link rel="stylesheet" href="/src/scss/main.scss" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <!-- PRELOADER -->
@@ -64,10 +66,10 @@
             <p class="hero__subtitle fade-in">Atención personalizada y confidencial. Analizo tu situación y te digo exactamente qué está pasando y qué puedes hacer para recuperar la conexión emocional.</p>
             
             <div class="hero__actions fade-in">
-              <a href="#whatsapp" class="btn btn--primary btn--large glow-on-hover">
+              <a href="#whatsapp" class="btn btn--primary glow-on-hover">
                 <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
               </a>
-              <a href="#llamar" class="btn btn--secondary btn--large glow-on-hover">
+              <a href="#llamar" class="btn btn--secondary glow-on-hover">
                 <i class="fas fa-phone-alt"></i> Consulta Inmediata
               </a>
             </div>
@@ -80,7 +82,7 @@
             <div class="hero__image-wrapper">
               <div class="hero__glow-ring"></div>
               
-              <img src="/assets/images/hero/recupera-tu-pareja.jpg" alt="Ritual de Unión" class="hero__img" />
+              <img src="/assets/images/hero/recupera-tu-pareja.webp" alt="Ritual de Unión" class="hero__img" />
               
               <div class="hero__floating-badge">
                 <i class="fas fa-moon"></i>
@@ -124,7 +126,7 @@
           <div class="problems__grid">
             <!-- Síntoma 1 -->
             <div class="problem-card fade-in">
-              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/alejamiento.jpg');"></div>
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/alejamiento.webp');"></div>
               <div class="problem-card__overlay"></div>
               <div class="problem-card__content">
                 <i class="fas fa-door-open"></i>
@@ -135,7 +137,7 @@
 
             <!-- Síntoma 2 -->
             <div class="problem-card fade-in">
-              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/frialdad.jpg');"></div>
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/frialdad.webp');"></div>
               <div class="problem-card__overlay"></div>
               <div class="problem-card__content">
                 <i class="fas fa-snowflake"></i>
@@ -146,7 +148,7 @@
 
             <!-- Síntoma 3 -->
             <div class="problem-card fade-in">
-              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/bloqueo.jpg');"></div>
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/bloqueo.webp');"></div>
               <div class="problem-card__overlay"></div>
               <div class="problem-card__content">
                 <i class="fas fa-comment-slash"></i>
@@ -157,7 +159,7 @@
 
             <!-- Síntoma 4 -->
             <div class="problem-card fade-in">
-              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/terceras-personas.jpg');"></div>
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/terceras-personas.webp');"></div>
               <div class="problem-card__overlay"></div>
               <div class="problem-card__content">
                 <i class="fas fa-user-secret"></i>
@@ -168,7 +170,7 @@
 
             <!-- Síntoma 5 -->
             <div class="problem-card fade-in">
-              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/rutina.jpg');"></div>
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/rutina.webp');"></div>
               <div class="problem-card__overlay"></div>
               <div class="problem-card__content">
                 <i class="fas fa-heart-broken"></i>
@@ -179,7 +181,7 @@
 
             <!-- Síntoma 6 -->
             <div class="problem-card fade-in">
-              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/tiempo.jpg');"></div>
+              <div class="problem-card__bg" style="background-image: url('/assets/images/problemas/tiempo.webp');"></div>
               <div class="problem-card__overlay"></div>
               <div class="problem-card__content">
                 <i class="fas fa-hourglass-half"></i>
@@ -193,7 +195,7 @@
       </section>
 
       <!-- 3. SECCIÓN DE PROPUESTA DE VALOR -->
-      <section id="propuesta" class="section propuesta parallax" style="background-image: url('/assets/images/propuesta-bg.jpg');">
+      <section id="propuesta" class="section propuesta parallax" style="background-image: url('/assets/images/propuesta-bg.webp');">
         <div class="propuesta__overlay"></div>
         
         <div class="container relative z-10">
@@ -201,7 +203,7 @@
             <!-- Columna Visual (Izquierda) -->
             <div class="propuesta__visual slide-up">
               <div class="propuesta__frame">
-                <div class="propuesta__image" style="background-image: url('/assets/images/propuesta-lectura.jpg');"></div>
+                <div class="propuesta__image" style="background-image: url('/assets/images/propuesta-lectura.webp');"></div>
                 <div class="propuesta__glow"></div>
               </div>
             </div>
@@ -240,23 +242,14 @@
           <p class="subtitle">Cada caso es diferente. Por eso trabajamos con soluciones específicas según tu problema emocional.</p>
           <div class="grid services-grid">
             <!-- Tarjeta 1: Amarres de Amor -->
-            <div class="card flip-card section-reveal">
+            <div class="card section-reveal">
               <div class="card-inner">
-                <div class="card-front" style="background-image: url('/assets/images/servicios/amarres-de-amor.jpg');">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/amarres-de-amor.webp');">
                   <div class="card-front__overlay"></div>
                   <div class="card-front__content">
                     <i class="fas fa-heart"></i>
                     <h3>Amarres de Amor</h3>
                     <p>Para recuperar o fortalecer una relación que se está perdiendo.</p>
-                  </div>
-                </div>
-                <div class="card-back glass-panel">
-                  <div class="card-back__content">
-                    <ul>
-                      <li><i class="fas fa-check"></i> Reconciliación total</li>
-                      <li><i class="fas fa-check"></i> Restauración del vínculo</li>
-                      <li><i class="fas fa-check"></i> Protección contra rupturas</li>
-                    </ul>
                     <a href="#contacto" class="btn btn--primary">Recuperar a mi Ex</a>
                   </div>
                 </div>
@@ -264,23 +257,14 @@
             </div>
 
             <!-- Tarjeta 2: Unión de Parejas -->
-            <div class="card flip-card section-reveal" style="transition-delay: 0.1s;">
+            <div class="card section-reveal" style="transition-delay: 0.1s;">
               <div class="card-inner">
-                <div class="card-front" style="background-image: url('/assets/images/servicios/union-parejas.jpg');">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/union-parejas.webp');">
                   <div class="card-front__overlay"></div>
                   <div class="card-front__content">
                     <i class="fas fa-ring"></i>
                     <h3>Unión de Parejas</h3>
                     <p>Para fortalecer relaciones actuales y evitar rupturas definitivas.</p>
-                  </div>
-                </div>
-                <div class="card-back glass-panel">
-                  <div class="card-back__content">
-                    <ul>
-                      <li><i class="fas fa-check"></i> Reavivar la pasión</li>
-                      <li><i class="fas fa-check"></i> Mejorar comunicación</li>
-                      <li><i class="fas fa-check"></i> Fortalecer el compromiso</li>
-                    </ul>
                     <a href="#contacto" class="btn btn--primary">Unir mi Relación</a>
                   </div>
                 </div>
@@ -288,23 +272,14 @@
             </div>
 
             <!-- Tarjeta 3: Magia Blanca -->
-            <div class="card flip-card section-reveal" style="transition-delay: 0.2s;">
+            <div class="card section-reveal" style="transition-delay: 0.2s;">
               <div class="card-inner">
-                <div class="card-front" style="background-image: url('/assets/images/servicios/magia-blanca.jpg');">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/magia-blanca.webp');">
                   <div class="card-front__overlay"></div>
                   <div class="card-front__content">
                     <i class="fas fa-dove"></i>
                     <h3>Magia Blanca y Hechizos</h3>
                     <p>Trabajos espirituales puros enfocados en armonía y luz.</p>
-                  </div>
-                </div>
-                <div class="card-back glass-panel">
-                  <div class="card-back__content">
-                    <ul>
-                      <li><i class="fas fa-check"></i> Endulzamientos puros</li>
-                      <li><i class="fas fa-check"></i> Apertura de caminos</li>
-                      <li><i class="fas fa-check"></i> Atracción magnética</li>
-                    </ul>
                     <a href="#contacto" class="btn btn--primary">Sanar con Luz</a>
                   </div>
                 </div>
@@ -312,23 +287,14 @@
             </div>
 
             <!-- Tarjeta 4: Amarres Mismo Sexo -->
-            <div class="card flip-card section-reveal" style="transition-delay: 0.3s;">
+            <div class="card section-reveal" style="transition-delay: 0.3s;">
               <div class="card-inner">
-                <div class="card-front" style="background-image: url('/assets/images/servicios/amarres-mismo-sexo.jpg');">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/amarres-mismo-sexo.webp');">
                   <div class="card-front__overlay"></div>
                   <div class="card-front__content">
                     <i class="fas fa-rainbow"></i>
                     <h3>Amarres LGBT</h3>
                     <p>Trabajos energéticos personalizados para diversidad sexual.</p>
-                  </div>
-                </div>
-                <div class="card-back glass-panel">
-                  <div class="card-back__content">
-                    <ul>
-                      <li><i class="fas fa-check"></i> Retorno de pareja LGBT</li>
-                      <li><i class="fas fa-check"></i> Conexión de almas gemelas</li>
-                      <li><i class="fas fa-check"></i> Estabilidad matrimonial</li>
-                    </ul>
                     <a href="#contacto" class="btn btn--primary">Consulta Privada</a>
                   </div>
                 </div>
@@ -336,23 +302,14 @@
             </div>
 
             <!-- Tarjeta 5: Limpias y Protecciones -->
-            <div class="card flip-card section-reveal" style="transition-delay: 0.4s;">
+            <div class="card section-reveal" style="transition-delay: 0.4s;">
               <div class="card-inner">
-                <div class="card-front" style="background-image: url('/assets/images/servicios/limpias-protecciones.jpg');">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/limpias-protecciones.webp');">
                   <div class="card-front__overlay"></div>
                   <div class="card-front__content">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Limpias Energéticas</h3>
                     <p>Eliminación profunda de entidades y bloqueos que afectan tu amor.</p>
-                  </div>
-                </div>
-                <div class="card-back glass-panel">
-                  <div class="card-back__content">
-                    <ul>
-                      <li><i class="fas fa-check"></i> Barridos energéticos</li>
-                      <li><i class="fas fa-check"></i> Despojo de envidias</li>
-                      <li><i class="fas fa-check"></i> Escudo protector áurico</li>
-                    </ul>
                     <a href="#contacto" class="btn btn--primary">Necesito Protección</a>
                   </div>
                 </div>
@@ -360,23 +317,14 @@
             </div>
 
             <!-- Tarjeta 6: Lectura de Cartas -->
-            <div class="card flip-card section-reveal" style="transition-delay: 0.5s;">
+            <div class="card section-reveal" style="transition-delay: 0.5s;">
               <div class="card-inner">
-                <div class="card-front" style="background-image: url('/assets/images/servicios/lectura-cartas.jpg');">
+                <div class="card-front" style="background-image: url('/assets/images/servicios/lectura-cartas.webp');">
                   <div class="card-front__overlay"></div>
                   <div class="card-front__content">
                     <i class="fas fa-star-and-crescent"></i>
                     <h3>Lectura de Cartas</h3>
                     <p>Diagnóstico espiritual exacto para entender qué está ocurriendo.</p>
-                  </div>
-                </div>
-                <div class="card-back glass-panel">
-                  <div class="card-back__content">
-                    <ul>
-                      <li><i class="fas fa-check"></i> Revelación de intenciones</li>
-                      <li><i class="fas fa-check"></i> Análisis de infidelidad</li>
-                      <li><i class="fas fa-check"></i> Guía paso a paso</li>
-                    </ul>
                     <a href="#contacto" class="btn btn--primary">Agendar Lectura</a>
                   </div>
                 </div>
@@ -387,7 +335,7 @@
       </section>
 
       <!-- 5. SECCIÓN DE BENEFICIOS (Bento Box) -->
-      <section id="beneficios" class="section section--dark parallax" style="background-image: url('./assets/images/beneficios-bg.jpg');">
+      <section id="beneficios" class="section section--dark parallax" style="background-image: url('./assets/images/beneficios-bg.webp');">
         <div class="container">
           <div class="section-header text-center section-reveal">
             <span class="badge badge--glow">¿Por qué elegirme?</span>
@@ -408,7 +356,7 @@
               </div>
             </div>
 
-            <div class="bento-card section-reveal" style="transition-delay: 0.1s;">
+            <div class="bento-card bento-card--tall section-reveal" style="transition-delay: 0.1s;">
               <div class="bento-card__glow"></div>
               <div class="bento-card__content">
                 <div class="bento-card__icon">
@@ -441,7 +389,7 @@
               </div>
             </div>
 
-            <div class="bento-card bento-card--wide section-reveal" style="transition-delay: 0.4s;">
+            <div class="bento-card bento-card--full section-reveal" style="transition-delay: 0.4s;">
               <div class="bento-card__glow"></div>
               <div class="bento-card__content">
                 <div class="bento-card__icon">
@@ -478,16 +426,16 @@
       </section>
 
       <!-- 7. URGENCIA -->
-      <section id="urgencia" class="urgency section parallax" style="background-image: url('./assets/images/urgencia-background.jpg');"> <!-- Deja este path inexistente o cámbialo a mano -->
+      <section id="urgencia" class="urgency section parallax" style="background-image: url('./assets/images/urgencia-background.webp');"> <!-- Deja este path inexistente o cámbialo a mano -->
         <div class="container fade-in">
           <h2>Entre más esperas, más difícil puede volverse la situación</h2>
           <p>Las decisiones que tomes ahora pueden marcar la diferencia. No dejes que la distancia emocional aumente.</p>
           <p class="text-gold">Consulta ahora de forma privada</p>
           <div class="hero__actions">
-            <a href="#whatsapp" class="btn btn--primary btn--large glow-on-hover">
+            <a href="#whatsapp" class="btn btn--primary glow-on-hover">
               <i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp ahora
             </a>
-            <a href="#llamar" class="btn btn--secondary btn--large glow-on-hover">
+            <a href="#llamar" class="btn btn--secondary glow-on-hover">
               <i class="fas fa-phone-alt"></i> Llamar ahora
             </a>
           </div>
@@ -505,9 +453,11 @@
           </div>
           <div class="footer__links">
             <a href="#problemas">Problemas</a>
+            <a href="#propuesta">Mi Ayuda</a>
             <a href="#servicios">Servicios</a>
             <a href="#beneficios">Beneficios</a>
             <a href="#testimonios">Testimonios</a>
+            <a href="#urgencia">Contacto</a>
           </div>
           <div class="footer__disclaimer">
             <p>Los resultados pueden variar según cada caso. Servicio exclusivo para mayores de 18 años. Todo análisis se realiza con total ética y confidencialidad.</p>
@@ -519,6 +469,11 @@
     <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/525534211503?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
       <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- FLOATING PHONE BUTTON -->
+    <a href="tel:+525534211503" class="phone-float" aria-label="Llamada Directa">
+      <i class="fas fa-phone-alt"></i>
     </a>
 
     <script type="module" src="/src/js/main.js"></script>

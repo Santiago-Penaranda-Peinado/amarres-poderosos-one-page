@@ -10,11 +10,10 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(to bottom, 
-            $color-bg-dark 0%, 
-            rgba(22, 16, 43, 0.8) 50%, 
-            $color-bg-dark 100%
-        );
+        background: linear-gradient(to bottom,
+                $color-bg-dark 0%,
+                rgba(22, 16, 43, 0.8) 50%,
+                $color-bg-dark 100%);
         z-index: 1;
     }
 
@@ -58,8 +57,19 @@
         margin-top: 3.5rem;
         display: flex;
         gap: 1.5rem;
+        flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            align-items: center;
+
+            .btn {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
     }
 
     .hero__trust {

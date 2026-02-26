@@ -3,7 +3,7 @@
     background-color: #17122b;
     position: relative;
     overflow: hidden;
-    padding: 8rem 0; // Ensures enough spacing around the staggered grid
+    padding: 4rem 0; // Ensures enough spacing around the staggered grid
 
     // Smooth transition gradients for top (Hero) and bottom (Mi Ayuda)
     &::before {
@@ -110,7 +110,7 @@
     &__overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(#0b0710, 1) 0%, rgba(#0b0710, 0.8) 40%, transparent 100%);
+        background: linear-gradient(to top, rgba(#0b0710, 1) 0%, rgba(#0b0710, 0) 40%, transparent 100%);
         z-index: 2;
         transition: opacity 0.5s ease;
     }

@@ -1,11 +1,11 @@
 // Ubicación: /app/src/scss/sections/_propuesta.scss
 .propuesta {
     position: relative;
-    padding: 6rem 0;
+    padding: 3rem 0;
     overflow: hidden;
 
     @media (min-width: 992px) {
-        padding: 8rem 0;
+        padding: 4rem 0;
     }
 
     // Smooth gradient overlay to blend perfectly with the dark theme

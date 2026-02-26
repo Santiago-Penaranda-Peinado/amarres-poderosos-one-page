@@ -1,15 +1,13 @@
 // Ubicación: /app/src/scss/components/_whatsapp.scss
-.whatsapp-float {
+.whatsapp-float,
+.phone-float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 30px;
     right: 30px;
-    background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
     text-align: center;
-    font-size: 35px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     z-index: 999;
     display: flex;
@@ -18,12 +16,22 @@
     transition: all $transition-medium;
     text-decoration: none;
 
-    // Glowing pulse effect
-    animation: pulse-wa 2s infinite;
-
     i {
         margin-top: 2px; // optical alignment
     }
+
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        right: 20px;
+    }
+}
+
+.whatsapp-float {
+    bottom: 30px;
+    font-size: 35px;
+    background-color: #25d366;
+    animation: pulse-wa 2s infinite;
 
     &:hover {
         transform: translateY(-5px) scale(1.05);
@@ -33,11 +41,28 @@
     }
 
     @media (max-width: 768px) {
-        width: 50px;
-        height: 50px;
         bottom: 20px;
-        right: 20px;
         font-size: 30px;
+    }
+}
+
+.phone-float {
+    bottom: 110px; // 30px (base) + 60px (button) + 20px (gap)
+    font-size: 28px;
+    background-color: $color-primary;
+    animation: pulse-phone 2s infinite;
+    animation-delay: 1s;
+
+    &:hover {
+        transform: translateY(-5px) scale(1.05);
+        color: #fff;
+        background-color: lighten($color-primary, 5%);
+        box-shadow: 0 10px 25px rgba($color-primary, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        bottom: 85px; // 20px + 50px + 15px gap
+        font-size: 24px;
     }
 }
 
@@ -52,5 +77,19 @@
 
     100% {
         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes pulse-phone {
+    0% {
+        box-shadow: 0 0 0 0 rgba($color-primary, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba($color-primary, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba($color-primary, 0);
     }
 }
