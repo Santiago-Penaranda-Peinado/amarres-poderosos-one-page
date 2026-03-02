@@ -11,6 +11,39 @@
       gtag('config', 'AW-17988091026');
     </script>
 
+    <!-- Google Ads Conversion Scripts -->
+    <script>
+    // Conversion para Llamada Telefonica
+    function gtag_report_phone_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17988091026/n2ajCK7j0YEcEJL5sYFD',
+          'value': 1.0,
+          'currency': 'MXN',
+          'event_callback': callback
+      });
+      return false;
+    }
+
+    // Conversion para Whatsapp
+    function gtag_report_whatsapp_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17988091026/z1a4CLGA34EcEJL5sYFD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recupera el Amor - Amarres Poderosos</title>
@@ -477,12 +510,12 @@
     </main>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/525534211503?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
+    <a href="https://wa.me/525534211503?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios" onclick="return gtag_report_whatsapp_conversion('https://wa.me/525534211503?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios');" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contacto por WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
     
     <!-- FLOATING PHONE BUTTON -->
-    <a href="tel:+525534211503" class="phone-float" aria-label="Llamada Directa">
+    <a href="tel:+525534211503" onclick="return gtag_report_phone_conversion('tel:+525534211503');" class="phone-float" aria-label="Llamada Directa">
       <i class="fas fa-phone-alt"></i>
     </a>
 
